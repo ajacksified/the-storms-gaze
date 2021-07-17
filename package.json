@@ -1,0 +1,39 @@
+{
+  "name": "challenge-the-storms-gaze",
+  "version": "1.0.0",
+  "description": "Newsletter for the ISD-II Challenge: https://tc.emperorshammer.org",
+  "main": "index.js",
+  "scripts": {
+    "build": "next build && next export",
+    "dev": "next dev",
+    "lint": "eslint pages components",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajacksified/the-storms-gaze.git"
+  },
+  "author": "Silwar Naiilo <ehsilwar@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ajacksified/the-storms-gaze/issues"
+  },
+  "homepage": "https://github.com/ajacksified/the-storms-gaze#readme",
+  "devDependencies": {
+    "eslint": "^7.30.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-next": "^11.0.1",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "next": "^11.0.1",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "titleize": "^3.0.0"
+  }
+}

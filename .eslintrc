@@ -1,0 +1,9 @@
+{
+  "extends": ["airbnb", "airbnb/hooks", "next"],
+  "rules": {
+    "react/no-unescaped-entities": 0,
+    "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
+    "react/react-in-jsx-scope": 0,
+    "react/jsx-one-expression-per-line": 0
+  }
+}
