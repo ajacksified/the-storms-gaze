@@ -1,4 +1,18 @@
 import axios from 'axios';
+import config from '../config';
+
+export async function loadPilotActivitydata(pin, startDate, endDate) {
+  const { data: pilotData } = await axios.get(`https://api.emperorshammer.org/pilot/${pin}`);
+
+  const {
+    data: activityInfo,
+  } = await axios.get(`http://gonk.vercel.app/api/activity?pilotId=${pin}&startDate=${startDate}&endDate=${endDate}`);
+
+  return {
+    ...pilotData,
+    ...activityInfo,
+  };
+}
 
 export async function loadSquadronActivityData(
   squadronId,
@@ -29,6 +43,8 @@ export async function loadShipData(squadronIds, startDate, endDate) {
   const data = await Promise.all(squadronIds.map(
     (id) => loadSquadronActivityData(id, startDate, endDate)
   ));
+
+  data.push(await loadPilotActivitydata(config.com.pin, startDate, endDate));
 
   // Flatten out the array, we don't need to break it up by squadron.
   return data.flat();

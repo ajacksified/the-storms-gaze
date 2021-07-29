@@ -175,7 +175,7 @@ export function CombatRatings({ combatRatings }) {
           </h6>
 
           <ul style={styles.unbulletedList}>
-            {combatRatings.NEW_COMBAT_RATING.map((advancement) => (
+            {combatRatings.NEW_COOP_RATING.map((advancement) => (
               <li key={advancement.name} style={styles.unbulletedListItem}>
                 <strong>{`${advancement.name}: `}</strong>
                 {advancement.ratings.join(', ')}

@@ -1,5 +1,3 @@
-const white = '#ffffff';
-const black = '#000000';
 const lightBlue = '#004c83';
 const blue = '#0095ff';
 const grey50 = '#666666';
@@ -9,15 +7,12 @@ const primary = blue;
 const secondary = lightBlue;
 const highlight = yellow;
 
-const text = white;
-const textFont = 'serif';
-const headingFont = 'serif';
+const textFont = 'inherit';
+const headingFont = 'inherit';
 const linkColor = primary;
 const borderColor = grey50;
 
 const cardWidth = '650px';
-
-const background = black;
 
 export const h1 = {
   fontSize: 36,
@@ -62,8 +57,6 @@ export const h6 = {
 };
 
 export const body = {
-  color: text,
-  backgroundColor: background,
   fontFamily: textFont,
   fontSize: 18,
 };
