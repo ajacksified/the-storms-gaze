@@ -4,11 +4,18 @@ import Link from './link';
 import * as styles from './styles';
 import config from '../config';
 
-export default function Intro({ children, showUniform }) {
+export default function Intro({
+  children,
+  showUniform,
+  heading = config.com.intro,
+  uniformThumbnail = config.com.uniformThumbnail,
+  reporter = config.com.name,
+  reporterPin = config.com.pin,
+}) {
   return (
     <Card>
       <h5 style={{ ...styles.h5, marginBottom: '1em' }}>
-        {config.com.intro}
+        {heading}
       </h5>
 
       { showUniform && (
@@ -18,9 +25,14 @@ export default function Intro({ children, showUniform }) {
           rel="noreferrer"
         >
           <img
-            style={{ width: '100%', maxWidth: '190px', float: 'right', height: 'auto' }}
-            src={config.com.uniformThumbnail}
-            alt={`The uniform of ${config.com.name}, #${config.com.pin}`}
+            style={{
+              width: '100%',
+              maxWidth: '190px',
+              float: 'right',
+              height: 'auto',
+            }}
+            src={uniformThumbnail}
+            alt={`The uniform of ${reporter}, #${reporterPin}`}
           />
         </Link>
       )}

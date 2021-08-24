@@ -8,6 +8,7 @@ export default function Heading({
   submissionDate,
   startDate,
   endDate,
+  reportType = "Commodore's",
 }) {
   return (
     <Card>
@@ -38,7 +39,7 @@ export default function Heading({
 
           <br />
 
-          {`Commodore's report: ${startDate} - ${endDate}`}
+          {`${reportType} report: ${startDate} - ${endDate}`}
         </p>
       </center>
     </Card>
