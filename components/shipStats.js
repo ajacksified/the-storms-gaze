@@ -80,7 +80,7 @@ export function Promotions({ promotions }) {
           return (
             <li key={pin} style={styles.unbulletedListItem}>
               {rankImages[rank]()}
-              {ranks[previousRank]?.toUpperCase() || previousRank}
+              {ranks[previousRank]?.toUpperCase() || 'CT'}
               {' -> '}
               {name}
             </li>

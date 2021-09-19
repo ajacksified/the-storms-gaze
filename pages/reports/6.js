@@ -147,10 +147,6 @@ export default function Report({ activityData, comActivity }) {
         </p>
 
         <p>
-          TODO: new Eagle CMDR?
-        </p>
-
-        <p>
           {'I have released a new mission, '}
           <Link href="https://tc.emperorshammer.org/download.php?id=1468&type=info">
             XWA-free battle 161: "Tempest: Deep Strike"
@@ -163,6 +159,11 @@ export default function Report({ activityData, comActivity }) {
           The highest scores earn an IS-GW, SW, or BW, and anyone with at least
           50% of the high score will win a CW. To be valid, pilots must write
           a 20-word review.
+        </p>
+
+        <p>
+          Congratulations to Xylo Pethtel on his promotion to Lieutenant
+          Commander!
         </p>
 
         <p>
@@ -269,13 +270,6 @@ export default function Report({ activityData, comActivity }) {
           Lev Gora, MC-11543
           <br /><br />
           Chief Maintenance Officer, Main Engine Crew #16, ISD-II Challenge
-        </p>
-
-        <hr />
-
-        <p>
-          Congratulations to Xylo Pethtel on his promotion to Lieutenant
-          Commander!
         </p>
       </Intro>
 
