@@ -20,7 +20,7 @@ import {
 import Card from './card';
 import * as styles from './styles';
 
-export function ShipStats({ shipStats }) {
+export const ShipStats = function ({ shipStats }) {
   return (
     <Card>
       <h5 style={{ ...styles.h5, marginBottom: '1em' }}>
@@ -60,9 +60,9 @@ export function ShipStats({ shipStats }) {
       </ul>
     </Card>
   );
-}
+};
 
-export function Promotions({ promotions }) {
+export const Promotions = function ({ promotions }) {
   if (!promotions.length) {
     return null;
   }
@@ -89,9 +89,9 @@ export function Promotions({ promotions }) {
       </ul>
     </Card>
   );
-}
+};
 
-export function Medals({ medals }) {
+export const Medals = function ({ medals }) {
   const formattedMedals = Object.keys(medals).reduce((list, current) => ({
     ...list,
     [current.toLowerCase()]: medals[current],
@@ -114,7 +114,8 @@ export function Medals({ medals }) {
               ...styles.h6,
               marginBottom: '0',
               marginTop: '1em',
-            }}>
+            }}
+            >
               {medalImages[medal]()}
               {`${medalFullNames[medal.toUpperCase().replace('-', '_')]}`}
               {medalImages[medal]()}
@@ -125,9 +126,9 @@ export function Medals({ medals }) {
       })}
     </Card>
   );
-}
+};
 
-export function CombatRatings({ combatRatings }) {
+export const CombatRatings = function ({ combatRatings }) {
   return (
     <Card>
       <h5 style={{ ...styles.h5, marginBottom: '1em' }}>
@@ -186,9 +187,9 @@ export function CombatRatings({ combatRatings }) {
       )}
     </Card>
   );
-}
+};
 
-export function Transfers({ transfers }) {
+export const Transfers = function ({ transfers }) {
   if (!transfers.length) {
     return null;
   }
@@ -208,7 +209,7 @@ export function Transfers({ transfers }) {
       </ul>
     </Card>
   );
-}
+};
 
 export default function ActivityInfo({ activityData }) {
   const shipStats = getStatsFromActivityData(activityData);

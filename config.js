@@ -1,6 +1,6 @@
 const config = {
   reportTitleFormat: (number) => `The Storm's Gaze #${number}`,
-  ship: 'ISD-II Challenge',
+  ship: 'ISDII Challenge',
   shipId: '3',
 
   shipPatch: {
@@ -10,9 +10,9 @@ const config = {
   },
 
   shipBanner: {
-    url: 'https://tc.emperorshammer.org/images/banners/Challenge2.jpg',
-    height: 722,
-    width: 89,
+    url: 'https://tc.emperorshammer.org/images/banners/64125chal.png',
+    height: 1920,
+    width: 480,
   },
 
   com: {

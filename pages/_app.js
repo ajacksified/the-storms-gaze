@@ -3,13 +3,13 @@
 import T from 'prop-types';
 import * as styles from '../components/styles';
 
-function MyApp({ Component, pageProps }) {
+const MyApp = function ({ Component, pageProps }) {
   return (
     <div style={styles.body}>
       <Component {...pageProps} />
     </div>
   );
-}
+};
 
 MyApp.propTypes = {
   Component: T.any.isRequired,
