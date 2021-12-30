@@ -21,7 +21,7 @@ const config = {
     title: 'VA Silwar Naiilo',
     pin: 12630,
     email: 'ehsilwar@gmail.com',
-    uniformThumbnail: 'https://tc.emperorshammer.org/images/thumbs/99829SilwarNaiilo_Dress.png',
+    uniformThumbnail: 'https://tc.emperorshammer.org/images/report-assets/silwar_naiilo_by_newt.png',
   },
 
   tccom: {

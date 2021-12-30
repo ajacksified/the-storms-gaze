@@ -34,11 +34,11 @@ export const medalFullNames = {
   IS_BW: 'Iron Star - Bronze Wings',
   IS_CR: 'Iron Star - Copper Ribbon',
   IS_CW: 'Iron Star - Copper Wings',
-  MOC_BOC: 'Medal of Communication - Bronze',
-  MOC_SOC: 'Medal of Communication - Silver',
-  MOC_GOC: 'Medal of Communication - Gold',
-  MOC_POC: 'Medal of Communication - Platinum',
   MOC_DOC: 'Medal of Communication - Diamond',
+  MOC_POC: 'Medal of Communication - Platinum',
+  MOC_GOC: 'Medal of Communication - Gold',
+  MOC_SOC: 'Medal of Communication - Silver',
+  MOC_BOC: 'Medal of Communication - Bronze',
 };
 
 export const medals = {
@@ -69,11 +69,11 @@ export const medals = {
   COB: 'cob',
   LOC: 'loc',
   LOS: 'los',
-  MOC_BOC: 'moc-boc',
-  MOC_SOC: 'moc-soc',
-  MOC_GOC: 'moc-goc',
-  MOC_POC: 'moc-poc',
   MOC_DOC: 'moc-doc',
+  MOC_POC: 'moc-poc',
+  MOC_GOC: 'moc-goc',
+  MOC_SOC: 'moc-soc',
+  MOC_BOC: 'moc-boc',
 };
 
 export const medalImages = Object.values(medals).reduce((acc, medal) => ({
