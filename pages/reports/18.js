@@ -15,9 +15,9 @@ import { loadPilotActivitydata, loadShipData } from '../../src/fetchData';
 import ComActivity from '../../components/comActivity';
 
 const reportNumber = 18;
-const startDate = '2021-12-20';
-const endDate = '2021-12-27';
-const submissionDate = '2021-12-28';
+const startDate = '2021-12-01';
+const endDate = '2021-12-30';
+const submissionDate = '2021-12-30';
 
 const manualComActivity = {
   communication: 'Email, Discord',
