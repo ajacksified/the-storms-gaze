@@ -40,8 +40,8 @@ const activity = {
     <React.Fragment key="NEW_COMBAT_RATING">
       <dt style={styles.dt}>New Combat Rating:</dt>
       <dd style={styles.dd}>
-        {newRatings.map(({ combatRating }) => (
-          combatRating
+        {newRatings.map(({ rating }) => (
+          rating
         )).join(', ')}
       </dd>
     </React.Fragment>
@@ -148,10 +148,10 @@ const activity = {
   ), // /^New uniform upload approved/,
 
   UPDATED_INPR: () => (
-    <>
+    <React.Fragment key="UPDATED_INPR">
       <dt style={styles.dt}>Updated INPR</dt>
       <dd style={styles.dd}>&nbsp;</dd>
-    </>
+    </React.Fragment>
   ),
 };
 

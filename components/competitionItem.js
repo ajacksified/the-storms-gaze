@@ -31,7 +31,7 @@ export default function CompetitionItem({
 
       { ` until ${ends} for the ${units}.`}
 
-      {notes ? <p>{notes}</p> : null}
+      {notes ? <p style={{ marginTop: 0 }}>{notes}</p> : null}
     </div>
   );
 }

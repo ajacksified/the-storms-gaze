@@ -3,7 +3,7 @@ import {
   getPromotionsFromActivityData,
   getMedalsFromActivityData,
   getCombatRatingChangesFromActivityData,
-  getAssignmentsFromActivityData,
+  // getAssignmentsFromActivityData,
 } from '../src/fetchData';
 
 import {
@@ -20,49 +20,47 @@ import {
 import Card from './card';
 import * as styles from './styles';
 
-export const ShipStats = function ({ shipStats }) {
-  return (
-    <Card>
-      <h5 style={{ ...styles.h5, marginBottom: '1em' }}>
-        Ship Stats
-      </h5>
+export const ShipStats = ({ shipStats }) => (
+  <Card>
+    <h5 style={{ ...styles.h5, marginBottom: '1em' }}>
+      Ship Stats
+    </h5>
 
-      <ul>
-        {shipStats.missions > 0 && (
-          <li>
-            {`Missions completed: ${shipStats.missions}`}
-          </li>
-        )}
+    <ul>
+      {shipStats.missions > 0 && (
+        <li>
+          {`Missions completed: ${shipStats.missions}`}
+        </li>
+      )}
 
-        {shipStats.reviews > 0 && (
-          <li>
-            {`Reviews submitted: ${shipStats.reviews}`}
-          </li>
-        )}
+      {shipStats.reviews > 0 && (
+        <li>
+          {`Reviews submitted: ${shipStats.reviews}`}
+        </li>
+      )}
 
-        {shipStats.iuCourses > 0 && (
-          <li>
-            {`IU courses completed: ${shipStats.iuCourses}`}
-          </li>
-        )}
+      {shipStats.iuCourses > 0 && (
+        <li>
+          {`IU courses completed: ${shipStats.iuCourses}`}
+        </li>
+      )}
 
-        {shipStats.locs > 0 && (
-          <li>
-            {`LoCs earned: ${shipStats.locs}`}
-          </li>
-        )}
+      {shipStats.locs > 0 && (
+        <li>
+          {`LoCs earned: ${shipStats.locs}`}
+        </li>
+      )}
 
-        {shipStats.loss > 0 && (
-          <li>
-            {`LoSs earned: ${shipStats.loss}`}
-          </li>
-        )}
-      </ul>
-    </Card>
-  );
-};
+      {shipStats.loss > 0 && (
+        <li>
+          {`LoSs earned: ${shipStats.loss}`}
+        </li>
+      )}
+    </ul>
+  </Card>
+);
 
-export const Promotions = function ({ promotions }) {
+export const Promotions = ({ promotions }) => {
   if (!promotions.length) {
     return null;
   }
@@ -91,7 +89,7 @@ export const Promotions = function ({ promotions }) {
   );
 };
 
-export const Medals = function ({ medals }) {
+export const Medals = ({ medals }) => {
   const formattedMedals = Object.keys(medals).reduce((list, current) => ({
     ...list,
     [current.toLowerCase()]: medals[current],
@@ -128,68 +126,66 @@ export const Medals = function ({ medals }) {
   );
 };
 
-export const CombatRatings = function ({ combatRatings }) {
-  return (
-    <Card>
-      <h5 style={{ ...styles.h5, marginBottom: '1em' }}>
-        Combat Ratings Advancements
-      </h5>
+export const CombatRatings = ({ combatRatings }) => (
+  <Card>
+    <h5 style={{ ...styles.h5, marginBottom: '1em' }}>
+      Combat Ratings Advancements
+    </h5>
 
-      {combatRatings.NEW_FCHG.length > 0 && (
-        <>
-          <h6 style={{ ...styles.h6, marginBottom: '1em' }}>
-            FCHG Advancements
-          </h6>
+    {combatRatings.NEW_FCHG.length > 0 && (
+      <>
+        <h6 style={{ ...styles.h6, marginBottom: '1em', textAlign: 'center' }}>
+          FCHG Advancements
+        </h6>
 
-          <ul style={styles.unbulletedList}>
-            {combatRatings.NEW_FCHG.map((advancement) => (
-              <li key={advancement.name} style={styles.unbulletedListItem}>
-                <strong>{`${advancement.name}: `}</strong>
-                {advancement.ratings.join(', ')}
-              </li>
-            ))}
-          </ul>
-        </>
-      )}
+        <ul style={styles.unbulletedList}>
+          {combatRatings.NEW_FCHG.map((advancement) => (
+            <li key={advancement.name} style={styles.unbulletedListItem}>
+              <strong>{`${advancement.name}: `}</strong>
+              {advancement.ratings.join(', ')}
+            </li>
+          ))}
+        </ul>
+      </>
+    )}
 
-      {combatRatings.NEW_COMBAT_RATING.length > 0 && (
-        <>
-          <h6 style={{ ...styles.h6, marginBottom: '1em', textAlign: 'center' }}>
-            PvP Rating Advancements
-          </h6>
+    {combatRatings.NEW_COMBAT_RATING.length > 0 && (
+      <>
+        <h6 style={{ ...styles.h6, marginBottom: '1em', textAlign: 'center' }}>
+          PvP Rating Advancements
+        </h6>
 
-          <ul style={styles.unbulletedList}>
-            {combatRatings.NEW_COMBAT_RATING.map((advancement) => (
-              <li key={advancement.name} style={styles.unbulletedListItem}>
-                <strong>{`${advancement.name}: `}</strong>
-                {advancement.ratings.join(', ')}
-              </li>
-            ))}
-          </ul>
-        </>
-      )}
+        <ul style={styles.unbulletedList}>
+          {combatRatings.NEW_COMBAT_RATING.map((advancement) => (
+            <li key={advancement.name} style={styles.unbulletedListItem}>
+              <strong>{`${advancement.name}: `}</strong>
+              {advancement.ratings.join(', ')}
+            </li>
+          ))}
+        </ul>
+      </>
+    )}
 
-      {combatRatings.NEW_COOP_RATING.length > 0 && (
-        <>
-          <h6 style={{ ...styles.h6, marginBottom: '1em', textAlign: 'center' }}>
-            Co-Op Rating Advancements
-          </h6>
+    {combatRatings.NEW_COOP_RATING.length > 0 && (
+      <>
+        <h6 style={{ ...styles.h6, marginBottom: '1em', textAlign: 'center' }}>
+          Co-Op Rating Advancements
+        </h6>
 
-          <ul style={styles.unbulletedList}>
-            {combatRatings.NEW_COOP_RATING.map((advancement) => (
-              <li key={advancement.name} style={styles.unbulletedListItem}>
-                <strong>{`${advancement.name}: `}</strong>
-                {advancement.ratings.join(', ')}
-              </li>
-            ))}
-          </ul>
-        </>
-      )}
-    </Card>
-  );
-};
+        <ul style={styles.unbulletedList}>
+          {combatRatings.NEW_COOP_RATING.map((advancement) => (
+            <li key={advancement.name} style={styles.unbulletedListItem}>
+              <strong>{`${advancement.name}: `}</strong>
+              {advancement.ratings.join(', ')}
+            </li>
+          ))}
+        </ul>
+      </>
+    )}
+  </Card>
+);
 
-export const Transfers = function ({ transfers }) {
+export const Transfers = ({ transfers }) => {
   if (!transfers.length) {
     return null;
   }
@@ -216,7 +212,8 @@ export default function ActivityInfo({ activityData }) {
   const promotions = getPromotionsFromActivityData(activityData);
   const medals = getMedalsFromActivityData(activityData);
   const combatRatings = getCombatRatingChangesFromActivityData(activityData);
-  const transfers = getAssignmentsFromActivityData(activityData);
+
+  // const transfers = getAssignmentsFromActivityData(activityData);
 
   return (
     <>
@@ -224,7 +221,9 @@ export default function ActivityInfo({ activityData }) {
       <Promotions promotions={promotions} />
       <Medals medals={medals} />
       <CombatRatings combatRatings={combatRatings} />
-      <Transfers transfers={transfers} />
+
+      {/* temporarily disabling while ATRs don't show trasnfers */}
+      {/* <Transfers transfers={transfers} /> */}
     </>
   );
 }

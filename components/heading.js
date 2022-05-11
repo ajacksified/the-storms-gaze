@@ -11,7 +11,7 @@ export default function Heading({
   reportType = "Commodore's",
 }) {
   return (
-    <Card>
+    <Card style={{ paddingLeft: 0, paddingRight: 0 }}>
       <center>
         <img
           alt="ISD-II Challenge Banner"
@@ -30,15 +30,12 @@ export default function Heading({
           {config.reportTitleFormat(reportNumber)}
         </h2>
 
-        <p>
+        <p styles={styles.p}>
           <strong>Submitted:</strong>
           {` ${submissionDate}`}
         </p>
 
         <p styles={styles.p}>
-
-          <br />
-
           {`${reportType} report: ${startDate} - ${endDate}`}
         </p>
       </center>

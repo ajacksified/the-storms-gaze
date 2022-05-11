@@ -18,6 +18,7 @@ export default function PilotActivity({
   notes,
 }) {
   const { MEDALS_AWARDED: awardedMedals } = activity;
+  console.log(activity);
 
   return (
     <Card>

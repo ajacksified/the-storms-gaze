@@ -1,5 +1,7 @@
 import * as styles from './styles';
 
+/* we're now getting medals back as full names, so we'll need to update the mapping */
+
 export const medalFullNames = {
   MOH: 'Medal of Honor',
   IC: 'Imperial Cross',
@@ -24,21 +26,21 @@ export const medalFullNames = {
   COL: 'Commendation of Loyalty',
   COS: 'Commendation of Service',
   LOA: 'Letter of Achievement',
-  IS_PR: 'Iron Star - Platinum Ribbon',
-  IS_PW: 'Iron Star - Platinum Wings',
-  IS_GR: 'Iron Star - Gold Ribbon',
-  IS_GW: 'Iron Star - Gold Wings',
-  IS_SR: 'Iron Star - Silver Ribbon',
-  IS_SW: 'Iron Star - Silver Wings',
-  IS_BR: 'Iron Star - Bronze Ribbon',
-  IS_BW: 'Iron Star - Bronze Wings',
-  IS_CR: 'Iron Star - Copper Ribbon',
-  IS_CW: 'Iron Star - Copper Wings',
-  MOC_DOC: 'Medal of Communication - Diamond',
-  MOC_POC: 'Medal of Communication - Platinum',
-  MOC_GOC: 'Medal of Communication - Gold',
-  MOC_SOC: 'Medal of Communication - Silver',
-  MOC_BOC: 'Medal of Communication - Bronze',
+  IS_PR: 'Iron Star with Platinum Ribbon',
+  IS_PW: 'Iron Star with Platinum Wings',
+  IS_GR: 'Iron Star with Gold Ribbon',
+  IS_GW: 'Iron Star with Gold Wings',
+  IS_SR: 'Iron Star with Silver Ribbon',
+  IS_SW: 'Iron Star with Silver Wings',
+  IS_BR: 'Iron Star with Bronze Ribbon',
+  IS_BW: 'Iron Star with Bronze Wings',
+  IS_CR: 'Iron Star with Copper Ribbon',
+  IS_CW: 'Iron Star with Copper Wings',
+  MOC_DOC: 'Medal of Communication with Diamond Oak Cluster',
+  MOC_POC: 'Medal of Communication with Platinum Oak Cluster',
+  MOC_GOC: 'Medal of Communication with Gold Oak Cluster',
+  MOC_SOC: 'Medal of Communication with Silver Oak Cluster',
+  MOC_BOC: 'Medal of Communication with Bronze Oak Cluster',
 };
 
 export const medals = {
