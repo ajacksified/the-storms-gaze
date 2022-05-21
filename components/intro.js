@@ -26,7 +26,7 @@ export default function Intro({
         >
           <img
             style={{
-              width: '100%',
+              width: '257px',
               maxWidth: '50%',
               float: 'right',
               height: 'auto',

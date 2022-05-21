@@ -8,7 +8,7 @@ const links = [{
   href: 'https://discord.gg/MSxYV8a',
   title: 'TC Discord',
 }, {
-  href: `https://tc.emperorshammer.org/roster.php?type=ship&id=${config.shipId}`,
+  href: `https://tc.emperorshammer.org/roster.php?${config.shipId}`,
   title: 'Ship Roster',
 }, {
   href: `mailto:${config.com.email}`,
@@ -23,7 +23,7 @@ const links = [{
   href: 'https://tc.emperorshammer.org/competitions.php',
   title: 'Competition Center',
 }, {
-  href: `https://tc.emperorshammer.org/showreport.php?id=3&nid=${config.shipId}`,
+  href: `https://tc.emperorshammer.org/showreport.php?unit=${config.shipId}`,
   title: 'Report Archive',
 }];
 

@@ -18,7 +18,6 @@ export default function PilotActivity({
   notes,
 }) {
   const { MEDALS_AWARDED: awardedMedals } = activity;
-  console.log(activity);
 
   return (
     <Card>
@@ -44,7 +43,7 @@ export default function PilotActivity({
           </>
         ) : null}
 
-        { Object.keys(omit(activity, 'MEDALS_AWARDED')).map((activityName) => (
+        { Object.keys(omit(activity, 'MEDALS_AWARDED', 'IGNORE_ME_IM_CONFUSING_DATA')).map((activityName) => (
           activityItem[activityName]
             ? activityItem[activityName](activity[activityName])
             : null
