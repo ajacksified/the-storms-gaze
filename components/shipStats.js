@@ -186,10 +186,6 @@ export const CombatRatings = ({ combatRatings }) => (
 );
 
 export const Transfers = ({ transfers }) => {
-  if (!transfers.length) {
-    return null;
-  }
-
   return (
     <Card>
       <h5 style={{ ...styles.h5, marginBottom: '1em' }}>
@@ -214,6 +210,7 @@ export default function ActivityInfo({ activityData }) {
   const combatRatings = getCombatRatingChangesFromActivityData(activityData);
 
   // const transfers = getAssignmentsFromActivityData(activityData);
+  // console.log(transfers);
 
   return (
     <>

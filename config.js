@@ -43,7 +43,7 @@ const config = {
   },
 
   // Randomize squadron order each time
-  squadrons: [156, 139, 42, 45, 40].sort(() => (Math.random() > 0.5 ? 1 : -1)),
+  squadrons: [156, 139, 42, 45, 40, 159].sort(() => (Math.random() > 0.5 ? 1 : -1)),
 };
 
 export default config;

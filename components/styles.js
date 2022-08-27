@@ -99,14 +99,18 @@ export const highlightedLink = {
 
 export const rankBadge = {
   height: '27px',
+  width: '49px',
   display: 'inline-block',
   paddingRight: '0.5em',
   verticalAlign: 'middle',
 };
 
 export const medal = {
-  ...rankBadge,
+  height: '27px',
   paddingLeft: '0.5em',
+  display: 'inline-block',
+  paddingRight: '0.5em',
+  verticalAlign: 'middle',
 };
 
 export const unbulletedList = {
@@ -116,4 +120,8 @@ export const unbulletedList = {
 
 export const unbulletedListItem = {
   marginBottom: '0.5em',
+};
+
+export const img = {
+  maxWidth: '100%',
 };

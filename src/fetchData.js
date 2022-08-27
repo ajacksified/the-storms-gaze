@@ -63,15 +63,13 @@ export function getStatsFromActivityData(activityData) {
   // get count of battles completed, high scores earned, locs earned, loss earned, number of reviews
   // posted, number of IU courses completed
 
-  const missions = activityData.reduce((total, pilot) => {
-    if (!pilot.activity.BATTLE_COMPLETED) {
-      return total;
-    }
-
-    return total + (pilot.activity.BATTLE_COMPLETED?.reduce((battleTotal, { numMissions }) => (
-      battleTotal + numMissions * 1
-    ), 0)) || 0
-  }, 0);
+  const missions = activityData.reduce((total, pilot) => (
+    total
+      + (pilot.activity.BATTLE_COMPLETED?.reduce((battleTotal, { numMissions }) => (
+        battleTotal + numMissions * 1
+      ), 0) || 0)
+      + (pilot.activity.FREE_MISSION_COMPLETED?.length || 0)
+  ), 0);
 
   const locs = activityData.reduce((total, pilot) => (
     total + (pilot.activity.MEDALS_AWARDED?.LoC || 0)
