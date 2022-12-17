@@ -36,6 +36,17 @@ const activity = {
     </React.Fragment>
   ), // (/^IU Course added to Academic Record by the SOO : \[(?<iuCourse>[^\(]+)]/,
 
+  COURSE_PASSED: (courses) => (
+    <React.Fragment key="COURSE_PASSED">
+      <dt style={styles.dt}>Courses Passed:</dt>
+      <dd style={styles.dd}>
+        {courses.map(({ courseName }) => (
+          courseName
+        )).join(', ')}
+      </dd>
+    </React.Fragment>
+  ),
+
   NEW_COMBAT_RATING: (newRatings) => (
     <React.Fragment key="NEW_COMBAT_RATING">
       <dt style={styles.dt}>New Combat Rating:</dt>

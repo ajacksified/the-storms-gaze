@@ -99,7 +99,7 @@ export const highlightedLink = {
 
 export const rankBadge = {
   height: '27px',
-  width: '49px',
+  width: undefined,
   display: 'inline-block',
   paddingRight: '0.5em',
   verticalAlign: 'middle',

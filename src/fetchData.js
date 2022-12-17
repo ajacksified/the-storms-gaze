@@ -1,4 +1,6 @@
 import axios from 'axios';
+import { PromisePool } from '@supercharge/promise-pool';
+
 import config from '../config';
 
 export async function loadPilotActivitydata(pin, startDate, endDate) {
@@ -24,25 +26,40 @@ export async function loadSquadronActivityData(
 
   const pins = [...squadronData.pilots.map(({ PIN }) => PIN), ...extraPins];
 
-  const pilotData = await Promise.all(pins.map(async (pin) => {
-    const {
-      data: activityInfo,
-    } = await axios.get(`http://gonk.vercel.app/api/activity?pilotId=${pin}&startDate=${startDate}&endDate=${endDate}`);
+  const { results: pilotData, errors } = await PromisePool
+    .for(pins)
+    .withConcurrency(3)
+    .process(async (pin, index) => {
+      const {
+        data,
+      } = await axios.get(`http://gonk.vercel.app/api/activity?pilotId=${pin}&startDate=${startDate}&endDate=${endDate}`);
 
-    return activityInfo;
-  }));
+      return {
+        ...data,
+        ...squadronData.pilots[index],
+      };
+    });
 
-  return pilotData.map((data, i) => ({
-    ...squadronData.pilots[i],
-    ...data,
-  }));
+  if (errors.length) {
+    throw new Error('Some requests for pilot data failed. Please try again later.');
+  }
+
+  return pilotData;
 }
 
 /* eslint comma-dangle: 0 */
 export async function loadShipData(squadronIds, startDate, endDate) {
-  const data = await Promise.all(squadronIds.map(
-    (id) => loadSquadronActivityData(id, startDate, endDate)
-  ));
+  const { results: data, errors } = await PromisePool
+    .for(squadronIds)
+    .withConcurrency(3)
+    .process(async (id) => (
+      loadSquadronActivityData(id, startDate, endDate)
+    ));
+
+  if (errors.length) {
+    console.log(errors);
+    throw new Error('Some requests for pilot data failed. Please try again later.');
+  }
 
   data.push(await loadPilotActivitydata(config.com.pin, startDate, endDate));
 
@@ -65,7 +82,7 @@ export function getStatsFromActivityData(activityData) {
 
   const missions = activityData.reduce((total, pilot) => (
     total
-      + (pilot.activity.BATTLE_COMPLETED?.reduce((battleTotal, { numMissions }) => (
+      + (pilot.activity?.BATTLE_COMPLETED?.reduce((battleTotal, { numMissions }) => (
         battleTotal + numMissions * 1
       ), 0) || 0)
       + (pilot.activity.FREE_MISSION_COMPLETED?.length || 0)
@@ -84,7 +101,9 @@ export function getStatsFromActivityData(activityData) {
   ), 0);
 
   const iuCourses = activityData.reduce((total, pilot) => (
-    total + (pilot.activity.IU_COMPLETED?.length || 0)
+    total
+      + (pilot.activity.IU_COMPLETED?.length || 0)
+      + (pilot.activity.COURSE_PASSED?.length || 0)
   ), 0);
 
   return {

@@ -4,13 +4,13 @@ const config = {
   shipId: '189',
 
   shipPatch: {
-    url: 'https://tc.emperorshammer.org/images/reports/challenge.png',
+    url: 'https://tc.emperorshammer.org/patch.php?id=233',
     height: 150,
     width: 150,
   },
 
   shipBanner: {
-    url: 'https://tc.emperorshammer.org/images/banners/64125chal.png',
+    url: 'https://tc.emperorshammer.org/images/banners/BattlegroupIII-1670089204-81ff21d8.jpg',
     height: 1920,
     width: 480,
   },
@@ -18,7 +18,7 @@ const config = {
   com: {
     intro: 'From the Desk of Silwar Naiilo',
     name: 'Silwar Naiilo',
-    title: 'VA Silwar Naiilo',
+    title: 'AD Silwar Naiilo',
     pin: 12630,
     email: 'ehsilwar@gmail.com',
     uniformThumbnail: 'https://tc.emperorshammer.org/images/report-assets/silwar_naiilo_by_newt.png',
@@ -43,7 +43,7 @@ const config = {
   },
 
   // Randomize squadron order each time
-  squadrons: [156, 139, 42, 45, 40, 159].sort(() => (Math.random() > 0.5 ? 1 : -1)),
+  squadrons: [156, 139, 45, 40, 159].sort(() => (Math.random() > 0.5 ? 1 : -1)),
 };
 
 export default config;
